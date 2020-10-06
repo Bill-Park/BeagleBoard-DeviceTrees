@@ -8,12 +8,16 @@
  };  
 };  
 // eventually these should be available in a header  
+#define P9_11a (0x3400 + 4 * 203)
+#define P9_11b (0x3400 + 4 * 136)
+#define P9_13  (0x3400 + 4 * 204)
 #define P9_14  (0x3400 + 4 * 107)  
 #define P9_16  (0x3400 + 4 * 108)  
 #define P9_19a (0x3400 + 4 * 16)  
 #define P9_19b (0x3400 + 4 * 95)  
 #define P9_20a (0x3400 + 4 * 17)  
 #define P9_20b (0x3400 + 4 * 94)  
+
 // enable uart5 on P9.11(rx) and P9.13(tx)
 &uart5 {
  status = "okay" ;
