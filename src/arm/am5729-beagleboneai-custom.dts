@@ -8,9 +8,6 @@
  };  
 };  
 // eventually these should be available in a header  
-#define P9_11a (0x3400 + 4 * 203)
-#define P9_11b (0x3400 + 4 * 136)
-#define P9_13  (0x3400 + 4 * 204)
 #define P9_14  (0x3400 + 4 * 107)  
 #define P9_16  (0x3400 + 4 * 108)  
 #define P9_19a (0x3400 + 4 * 16)  
@@ -22,22 +19,6 @@
 #define P9_21 (0x3400 + 4 * 241) // PID is 241 //0x37C4
 #define P9_22a (0x3400 + 4 * 167) // PID is 167 //unused //0x369C
 #define P9_22b (0x3400 + 4 * 240) // PID is 241 //0x37C0
-
-// enable uart5 on P9.11(rx) and P9.13(tx)
-&uart5 {
- status = "okay" ;
- pinctrl-names = "default";
- pinctrl-0 = <&uart5_pins>;
-} ;
-&dra7_pmx_core {
- uart5_pins: uart5 {
-  pinctrl-single,pins = <
-   DRA7XX_CORE_IOPAD( P9_11a, MUX_MODE1 ) // P9.11 uart5_txd
-   DRA7XX_CORE_IOPAD( P9_11b, MUX_MODE15) // P9.11a driver_off //shared-pin
-   DRA7XX_CORE_IOPAD( P9_13, PIN_INPUT_PULLUP | MUX_MODE1) // P9.22b uart3_rxd
-  > ;
- } ;
-} ;
 
 &uart3 {
  status = "okay";
