@@ -23,7 +23,7 @@
  status = "okay" ;
  pinctrl-names = "default";
  pinctrl-0 = <&uart5_pins>;
-}
+} ;
 &dra7_pmx_core {
  uart5_pins: uart5 {
   pinctrl-single,pins = <
